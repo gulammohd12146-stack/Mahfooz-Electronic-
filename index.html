@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mahfooz Ali Electronic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0a0a0a;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 50px;
+position:fixed;
+width:100%;
+z-index:1000;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+}
+
+nav h1{
+color:#00f7ff;
+font-size:24px;
+}
+
+nav a{
+color:#fff;
+margin-left:20px;
+text-decoration:none;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h2{
+font-size:60px;
+background:linear-gradient(90deg,#00f7ff,#007cf0);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+margin-top:15px;
+color:#aaa;
+}
+
+.btn{
+margin-top:20px;
+padding:12px 30px;
+border:none;
+background:#00f7ff;
+color:black;
+border-radius:25px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* GLOW BACKGROUND */
+
+.glow{
+position:absolute;
+width:500px;
+height:500px;
+background:#00f7ff;
+filter:blur(150px);
+opacity:0.2;
+top:20%;
+left:30%;
+z-index:-1;
+}
+
+/* SERVICES */
+
+.services{
+padding:100px 50px;
+text-align:center;
+}
+
+.services h2{
+font-size:40px;
+margin-bottom:40px;
+}
+
+.cards{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.card{
+width:250px;
+padding:30px;
+background:#111;
+border-radius:20px;
+transition:0.4s;
+border:1px solid #00f7ff;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px #00f7ff;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+/* CONTACT */
+
+.contact{
+padding:100px 50px;
+text-align:center;
+}
+
+input,textarea{
+width:300px;
+padding:10px;
+margin:10px;
+border:none;
+border-radius:10px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#111;
+margin-top:50px;
+}
+
+/* SCROLL ANIMATION */
+
+.fade{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<nav>
+<h1>Mahfooz Ali Electronic</h1>
+<div>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+<h2>Smart Electronic Solutions</h2>
+<p>Repair | Installation | Maintenance</p>
+<button class="btn">Book Service</button>
+</section>
+
+<section id="services" class="services">
+
+<h2 class="fade">Our Services</h2>
+
+<div class="cards">
+
+<div class="card fade">
+<h3>TV Repair</h3>
+<p>LED, LCD, Smart TV fixing</p>
+</div>
+
+<div class="card fade">
+<h3>AC Service</h3>
+<p>Installation & maintenance</p>
+</div>
+
+<div class="card fade">
+<h3>Fridge Repair</h3>
+<p>Cooling issues & gas refill</p>
+</div>
+
+<div class="card fade">
+<h3>Washing Machine</h3>
+<p>Full repair & servicing</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2 class="fade">Contact Us</h2>
+
+<input type="text" placeholder="Your Name"><br>
+<input type="email" placeholder="Email"><br>
+<textarea placeholder="Message"></textarea><br>
+<button class="btn">Send Message</button>
+
+</section>
+
+<footer>
+<p>© 2026 Mahfooz Ali Electronic | All Rights Reserved</p>
+</footer>
+
+<script>
+
+/* SCROLL ANIMATION */
+
+const fades=document.querySelectorAll(".fade")
+
+window.addEventListener("scroll",()=>{
+fades.forEach(el=>{
+const top=el.getBoundingClientRect().top
+if(top < window.innerHeight-100){
+el.classList.add("show")
+}
+})
+})
+
+</script>
+
+</body>
+  </html>
